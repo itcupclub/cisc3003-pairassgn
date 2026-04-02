@@ -1,0 +1,138 @@
+:root{
+  --bg:#0d0f1a;
+  --surface:#171a27;
+  --surface-2:#1d2131;
+  --text:#f5f7ff;
+  --muted:#b5bdd3;
+  --primary:#8f7cff;
+  --border:#2b3043;
+}
+
+body.light{
+  --bg:#f3efff;
+  --surface:#ffffff;
+  --surface-2:#f7f4ff;
+  --text:#22263a;
+  --muted:#5f6783;
+  --primary:#7a66f0;
+  --border:#d7dcef;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Segoe UI","Nunito","Arial Rounded MT Bold",sans-serif;
+}
+a{color:inherit;text-decoration:none}
+
+.page{max-width:900px;margin:0 auto;padding:12px}
+
+.header{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:14px;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-logo{
+  background:#fff;color:#111;padding:6px 10px;border-radius:8px;font-weight:700
+}
+.brand h1{margin:0;font-size:34px;letter-spacing:.5px}
+
+.theme-toggle{
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  border-radius:999px;
+  padding:6px 12px;
+  cursor:pointer;
+}
+
+.hero,.about-card,.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:14px;
+}
+
+.avatar{
+  width:220px;height:220px;object-fit:cover;border-radius:50%;
+  border:3px solid #ffffff22;
+}
+.role{color:var(--muted);font-weight:600;margin:12px 0 4px}
+.hero h2{margin:0 0 8px;font-size:46px;line-height:1.1}
+.intro{color:var(--muted);font-size:20px;margin-bottom:12px}
+
+.quick-contact{display:flex;gap:10px;flex-wrap:wrap}
+.quick-contact a{
+  border:1px solid var(--border);
+  background:var(--surface-2);
+  border-radius:10px;
+  padding:8px 12px;
+  font-weight:600;
+}
+
+.about-card h3{margin:0 0 8px}
+.about-card p{color:var(--muted);line-height:1.7}
+.about-meta{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+.about-meta li{color:var(--text)}
+
+.tabs{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-bottom:1px solid var(--border);
+}
+.tab-btn{
+  background:transparent;border:none;color:var(--muted);
+  padding:12px 6px;cursor:pointer;font-size:18px;font-weight:600;
+}
+.tab-btn.active{
+  color:var(--text);
+  border-bottom:3px solid var(--primary);
+}
+
+.tab-panel{display:none;padding-top:14px}
+.tab-panel.active{display:block}
+
+.card h3{margin:0 0 10px}
+.card ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.8}
+
+.skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.skills span{
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  padding:6px 10px;border-radius:999px;color:var(--text)
+}
+
+/* 提高表单可读性（你指出的问题） */
+.contact-form{display:grid;gap:10px;margin-top:8px}
+.contact-form input,.contact-form textarea{
+  width:100%;
+  background:var(--surface-2);
+  border:1px solid #7f88a6;   /* 更清晰边框 */
+  color:var(--text);           /* 高对比文字 */
+  border-radius:10px;
+  padding:12px 14px;
+  font-size:17px;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color:#aab3ce;               /* 比之前更清晰 */
+}
+.contact-form button{
+  border:none;
+  border-radius:999px;
+  background:var(--primary);
+  color:#fff;
+  font-weight:700;
+  padding:11px;
+  cursor:pointer;
+}
+
+.footer{
+  margin-top:10px;
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+}

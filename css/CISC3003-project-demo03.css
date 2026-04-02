@@ -1,0 +1,305 @@
+:root {
+  --bg: #f6f7fb;
+  --text: #1f2430;
+  --muted: #5d6577;
+  --accent: #d92525;
+  --accent-2: #4a67b8;
+  --player-head: #d92525;
+  --player-body: #ef5350;
+  --ai-head: #4a67b8;
+  --ai-body: #6f8ee8;
+  --food: #ff8f00;
+  --grid: rgba(20, 30, 50, 0.12);
+  --border: rgba(50, 60, 90, 0.18);
+  --shadow: 0 10px 30px rgba(40, 50, 80, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.app {
+  width: 100vw;
+  height: 100dvh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.70) 0%, rgba(255,255,255,.56) 50%, rgba(255,255,255,.45) 100%),
+    url("./../assets/images/home-bg.png") center/cover no-repeat;
+}
+
+
+.app {
+  position: relative;
+}
+
+
+.screen {
+  display: none;
+  position: absolute;
+  inset: 10px;                 
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.screen.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h2, h3 { margin: 0 0 10px; }
+.subtitle { color: var(--muted); margin: 6px 0 10px; }
+
+.btn {
+  border: 1px solid rgba(74,103,184,.22);
+  border-radius: 12px;
+  padding: 9px 14px;
+  background: rgba(255,255,255,.92);
+  color: var(--text);
+  cursor: pointer;
+  transition: .2s ease;
+  pointer-events: auto;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(55,70,110,.16);
+}
+.btn.primary {
+  background: linear-gradient(135deg, #e53935, #c62828);
+  color: #fff;
+  border-color: rgba(180,20,20,.5);
+  font-weight: 700;
+}
+.btn.small {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+#homeScreen {
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.84) 0%, rgba(255,255,255,.66) 42%, rgba(255,255,255,.45) 100%),
+    url("./../assets/images/home-bg.png") center/cover no-repeat;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  z-index: 2;
+}
+
+#homeScreen h1 {
+  font-size: clamp(24px, 3.6vw, 44px);
+  color: #b51616;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px rgba(255,255,255,.6);
+}
+#homeScreen .subtitle {
+  font-size: clamp(13px, 1.8vw, 16px);
+  color: #3a4760;
+  font-weight: 600;
+}
+#homeScreen h1,
+#homeScreen .subtitle {
+  width: fit-content;
+  background: rgba(255,255,255,.72);
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(74,103,184,.22);
+}
+#homeScreen #btnGoDifficulty,
+#homeScreen #btnOpenSettingsFromHome {
+  min-width: 200px;
+  margin-top: 6px;
+}
+
+#gameScreen {
+  background: transparent;
+  z-index: 3;
+}
+
+.game-window {
+  width: min(96vw, 1240px);
+  height: min(96dvh, 940px);
+  max-height: calc(100dvh - 20px);
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(4px);
+  background: rgba(255,255,255,.62);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+#gameScreen .hud.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-weight: 600;
+  font-size: 14px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  flex: 0 0 auto;
+}
+
+#gameScreen .arena-layout {
+  display: grid;
+  grid-template-columns: 210px 1fr 210px;
+  gap: 10px;
+  align-items: stretch;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+#gameScreen .panel {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  overflow: auto;
+}
+#gameScreen .panel p {
+  margin: 7px 0;
+  font-size: 13px;
+}
+#gameScreen .panel hr {
+  border: none;
+  border-top: 1px solid rgba(50,60,90,.14);
+  margin: 10px 0;
+}
+#gameScreen .panel.left h3 { color: var(--accent); }
+#gameScreen .panel.right h3 { color: var(--accent-2); }
+
+#gameScreen #gameCanvas {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+}
+
+#gameScreen .game-actions {
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+#gameScreen .touch-controls {
+  margin: 8px auto 0;
+  width: 220px;
+  height: 220px;
+  position: relative;
+  display: none;
+  pointer-events: auto;
+}
+#gameScreen .touch-btn {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  border: 1px solid rgba(74,103,184,.25);
+  background: #ffffff;
+  color: #2f3f62;
+  font-size: 24px;
+  font-weight: 700;
+}
+#gameScreen .touch-btn.up { left: 78px; top: 0; }
+#gameScreen .touch-btn.left { left: 0; top: 78px; }
+#gameScreen .touch-btn.right { right: 0; top: 78px; }
+#gameScreen .touch-btn.down { left: 78px; bottom: 0; }
+
+.difficulty-grid {
+  display: grid;
+  gap: 10px;
+}
+.difficulty {
+  text-align: left;
+  background: #fff;
+  border: 1px solid rgba(217,37,37,.25);
+  cursor: pointer;
+}
+.difficulty small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+dialog {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,.98);
+  color: var(--text);
+  width: min(92vw, 420px);
+  padding: 16px;
+  z-index: 9999;
+}
+dialog::backdrop {
+  background: rgba(15,20,35,.35);
+}
+.setting-group { margin: 10px 0; }
+.new-record {
+  color: #c62828;
+  font-weight: 700;
+  min-height: 20px;
+}
+
+@media (max-width: 1100px) {
+  #gameScreen .arena-layout {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  #gameScreen .panel {
+    overflow: visible;
+  }
+
+  #gameScreen #gameCanvas {
+    width: min(88vw, 56dvh);
+    max-height: 56dvh;
+  }
+
+  #gameScreen .touch-controls {
+    display: block;
+    width: 190px;
+    height: 190px;
+  }
+  #gameScreen .touch-btn {
+    width: 56px;
+    height: 56px;
+    font-size: 22px;
+  }
+  #gameScreen .touch-btn.up { left: 67px; top: 0; }
+  #gameScreen .touch-btn.left { left: 0; top: 67px; }
+  #gameScreen .touch-btn.right { right: 0; top: 67px; }
+  #gameScreen .touch-btn.down { left: 67px; bottom: 0; }
+}

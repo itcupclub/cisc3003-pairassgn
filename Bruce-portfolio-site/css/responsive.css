@@ -1,0 +1,34 @@
+/* Mobile: default (stacked) */
+
+/* Tablet */
+@media (min-width: 768px) {
+    .content-layout {
+      grid-template-columns: 2fr 1fr;
+    }
+  
+    .hero {
+      max-width: 100%;
+    }
+  }
+  
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .page {
+      padding: 20px;
+    }
+  
+    .header {
+      margin-bottom: 16px;
+    }
+  
+    .hero {
+      width: 70%;
+      margin: 0 auto 16px;
+    }
+  
+    .content-layout {
+      width: 70%;
+      margin: 0 auto;
+      grid-template-columns: 2fr 1fr;
+    }
+  }

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" data-theme="classic">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Snake Arena</title>
+  <link rel="stylesheet" href="./../css/CISC3003-project-demo03.css">
+</head>
+<body>
+  <div class="app">
+    <section id="homeScreen" class="screen active">
+      <h1>Snake Arena</h1>
+      <p class="subtitle">Player vs AI (5 minutes)</p>
+      <button id="btnGoDifficulty" class="btn primary">Start Match</button>
+      <button id="btnOpenSettingsFromHome" class="btn">Skin and Audio Settings</button>
+    </section>
+
+    <section id="gameScreen" class="screen">
+    <h2 style="visibility: hidden;">title</h2>
+      <div class="game-window">
+        <div class="hud top">
+          <div>Time Left: <span id="timer">05:00</span></div>
+          <div>AI Difficulty: <span id="difficultyText">Easy</span></div>
+          <button id="btnPause" class="btn small">Pause</button>
+        </div>
+
+        <div class="arena-layout">
+          <aside class="panel left">
+            <h3>Player</h3>
+            <p>Score: <span id="playerScore">0.0</span></p>
+            <p>Boost: <span id="shiftState">OFF</span></p>
+            <p>Bonus: <span id="multiplierText">x1.0</span></p>
+            <hr>
+            <h3>Controls</h3>
+            <p>Move: ↑ ↓ ← →</p>
+            <p>Sprint: Shift</p>
+            <p>Shift bonus: +1.5x</p>
+          </aside>
+
+          <canvas id="gameCanvas" width="700" height="700" aria-label="Snake Arena Canvas"></canvas>
+
+          <aside class="panel right">
+            <h3>AI</h3>
+            <p>Score: <span id="aiScore">0.0</span></p>
+            <p>Status: <span id="aiState">Tracking</span></p>
+            <p>Strategy: <span id="aiStrategy">Attack</span></p>
+          </aside>
+        </div>
+
+        <div class="row game-actions">
+          <button id="btnGoHomeFromGame" class="btn">Back Home</button>
+          <button id="btnOpenSettingsFromGame" class="btn">Skin and Audio Settings</button>
+        </div>
+
+        <!-- ✅ 补上这个，和 app.js 里的 getElementById("touchControls") 对应 -->
+        <div id="touchControls" class="touch-controls">
+          <button class="touch-btn up" data-dir="up" aria-label="Up">↑</button>
+          <button class="touch-btn left" data-dir="left" aria-label="Left">←</button>
+          <button class="touch-btn right" data-dir="right" aria-label="Right">→</button>
+          <button class="touch-btn down" data-dir="down" aria-label="Down">↓</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <dialog id="difficultyDialog">
+    <h3>Select AI Difficulty</h3>
+    <div class="difficulty-grid">
+      <button class="btn difficulty modal-difficulty" data-difficulty="easy">
+        Easy
+        <small>Basic attack</small>
+      </button>
+      <button class="btn difficulty modal-difficulty" data-difficulty="normal">
+        Normal
+        <small>Aggressive intercept</small>
+      </button>
+      <button class="btn difficulty modal-difficulty" data-difficulty="hard">
+        Hard
+        <small>Maximum pressure</small>
+      </button>
+    </div>
+    <div class="row">
+      <button id="btnCloseDifficultyDialog" class="btn">Cancel</button>
+    </div>
+  </dialog>
+
+  <dialog id="settingsDialog">
+    <h3>Skin & Audio Settings</h3>
+    <div class="setting-group">
+      <label>Skin</label>
+      <select id="skinSelect">
+        <option value="classic">Classic</option>
+        <option value="neon">Neon</option>
+        <option value="light">Light</option>
+      </select>
+    </div>
+    <div class="setting-group">
+      <label><input type="checkbox" id="sfxToggle"> SFX</label>
+    </div>
+    <div class="setting-group">
+      <label><input type="checkbox" id="bgmToggle"> BGM</label>
+    </div>
+    <div class="setting-group">
+      <label for="volumeRange">Volume</label>
+      <input id="volumeRange" type="range" min="0" max="100" value="60">
+    </div>
+    <div class="row">
+      <button id="btnCloseSettings" class="btn primary">Done</button>
+    </div>
+  </dialog>
+
+  <dialog id="resultDialog">
+    <h3>Match Over</h3>
+    <p>Player Score: <span id="finalPlayerScore">0.0</span></p>
+    <p>AI Score: <span id="finalAiScore">0.0</span></p>
+    <p id="winnerText" class="new-record"></p>
+    <div class="row">
+      <button id="btnRetry" class="btn primary">Retry</button>
+      <button id="btnGoHome" class="btn">Home</button>
+    </div>
+  </dialog>
+
+  <script src="./../js/CISC3003-project-demo03.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/CISC3003-IndAssgn-showcase.css">
+    <link rel="stylesheet" href="./css/mediaqueries.css">
+    <title>My Portfolio - Showcase</title>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Hio Tou Chan - Showcase</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#learninglog">Learning Log</a></li>
+                <li><a href="#accomplishments">Accomplishments</a></li>
+                <li><a href="#statement">Statement of Purpose</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Hio Tou Chan</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+            	<ul>
+                	<li><a href="#learninglog" onclick="toggleMenu()">Learning Log</a></li>
+                	<li><a href="#accomplishments" onclick="toggleMenu()">Accomplishments</a></li>
+                	<li><a href="#statement" onclick="toggleMenu()">Statement of Purpose</a></li>
+            	</ul>
+            </div>
+        </div>
+    </nav>
+    <section id="learninglog">
+        <p class="section__text__p1">Showing My</p>
+        <h1 class="title">Learning Journey</h1>
+        <div class="section-container">
+            <ul class="timeline">
+            	<li>
+            		<div class="direction-r">
+            			<div class="flag-wrapper">
+            				<span class="flag">Creative Projects</span>
+            				<span class="time-wrapper"><span class="time">January 2023 - Present</span></span>
+            			</div>
+            			<div class="desc">Making fun and creative projects with various programming languages.</div>
+            		</div>
+            	</li>
+            	<li>
+            		<div class="direction-l">
+            			<div class="flag-wrapper">
+            				<span class="flag">Web Fundamentals</span>
+            				<span class="time-wrapper"><span class="time">September 2022 - January 2023</span></span>
+            			</div>
+            			<div class="desc">Learning the fundamentals of web development with HTML, CSS, and JavaScript.</div>
+            		</div>
+            	</li>
+            	<li>
+            		<div class="direction-r">
+            			<div class="flag-wrapper">
+            				<span class="flag">C, C++ and Python</span>
+            				<span class="time-wrapper"><span class="time">Feburary 2020 - August 2022</span></span>
+            			</div>
+            			<div class="desc">Learning programming for the first time with C. Then learn C++ and Python programming languages for competitive programming.</div>
+            		</div>
+            	</li>
+            </ul>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#accomplishments'">
+    </section>
+    <br>
+    <section id="accomplishments">
+        <p class="section__text__p1">Explore My Past</p>
+        <h1 class="title">Accomplishments</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="./assets/GMCC2021.jpg" alt="Project 1" class="project-img">
+                </div>
+                <h2 class="experienced-sub-title">GMCC2021 - Bronze</h2>
+                <div class="btn-container">
+                    <a class="btn btn-color-2 project-btn" href='./assets/GMCC2021.jpg' target="_blank">View Award</a>
+                </div>
+            </div>
+             <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="./assets/GMCC2022.jpg" alt="Project 2" class="project-img">
+                </div>
+                <h2 class="experienced-sub-title">GMCC2022 - Silver</h2>
+                <div class="btn-container">
+                    <a class="btn btn-color-2 project-btn" href='./assets/GMCC2022.jpg' target="_blank">View Award</a>
+                </div>
+            </div>
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="./assets/MOIC-vertical.jpg" alt="Project 1" class="project-img">
+                </div>
+                <h2 class="experienced-sub-title">Informatics Olympics 2022 - Silver</h2>
+                <div class="btn-container">
+                    <a class="btn btn-color-2 project-btn" href="./assets/MOIC-vertical.jpg" target="_blank">View Award</a>
+                </div>
+            </div>
+             <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="./assets/Robofest.jpg" alt="Project 2" class="project-img">
+                </div>
+                <h2 class="experienced-sub-title">Robofest 2022 - Participation</h2>
+                <div class="btn-container">
+                    <a class="btn btn-color-2 project-btn" href="./assets/Robofest.jpg" target="_blank">View Award</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#statement'">
+    </section>
+    <section id="statement">
+        <p class="section__text__p1">Check Out My</p>
+        <h1 class="title">Statement of Purpose</h1>
+        <br>
+        <div class="statement-container">
+            <h2 class="statement-sub-title">Introduction</h2>
+            <p class="statement-text">My fascination with computer science began during secondary school when I first explored that game design requires programming. Starting as curiosity, this quickly grew into a passion for solving problems through technology. I am now eager to pursue graduate study in Computer Science to deepen my expertise in algorithm design, computer graphics and multimedia processing.</p>
+            <br>
+            <h2 class="statement-sub-title">Academic Background</h2>
+            <p class="statement-text">During my undergraduate studies at the University of Macau, I gained a strong foundation in algorithms, data structures, and software engineering. Courses in graphics programming and artificial intelligence particularly shaped my interest in game development.</p>
+            <br>
+            <h2 class="statement-sub-title">Academic and Career Goals</h2>
+            <p class="statement-text">In graduate school, I aim to specialize in graphics and game logic, procedural content generation, and immersive user experiences. My short-term goal is to research adaptive game systems that respond to player behavior, creating more personalized and engaging gameplay. Long-term, I aspire to contribute to the gaming industry as a developer and researcher, designing innovative games that push the boundaries of storytelling, interactivity, and accessibility.</p>
+            <br>
+            <h2 class="statement-sub-title">Why I Chose This Program</h2>
+            <p class="statement-text">I am drawn to the University of Macau because of its comprehensive Computer Science curriculum and emphasis on both theoretical foundations and practical applications. The program's strong coursework in areas such as artificial intelligence, graphics, and software engineering provides the essential skills needed for game design and development. I am particularly excited by the opportunity to collaborate with peers on projects that challenge creativity and technical problem-solving, and to take advantage of the university’s computing resources and interdisciplinary environment. While my focus is on games, I value the flexibility of this program, which will allow me to explore diverse areas of computer science and apply them to interactive media and entertainment.</p>
+            <br>
+            <h2 class="statement-sub-title">Conclusion</h2>
+            <p class="statement-text">I am confident that my academic preparation, professional experiences, and creative vision make me a strong candidate for the Computer Science program at the University of Macau. I am eager to contribute to the academic community, collaborate on innovative projects, and continue my journey of advancing knowledge in computer science through the art and science of game design.</p>
+            <br>
+        </div>
+    </section>
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                <li><a href="./CISC3003-IndAssgn-home.html">Back to Home Page</a></li>
+            </ul>
+            </div>
+        </nav>
+        <p>CISC3003 Web Programming - 2026: DC325713 Chan Hio Tou</p>
+    </footer>
+    <script src="./js/CISC3003-IndAssgn-home.js"></script>
+</body>
+</html>

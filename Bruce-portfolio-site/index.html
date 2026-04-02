@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xu Wusiyuan | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <div class="brand-logo">&lt;/&gt;</div>
+        <h1>DEVFOLIO</h1>
+      </div>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀</button>
+    </header>
+
+    <section class="hero">
+      <img src="assets/images/avatar.jpg" alt="Xu Wusiyuan portrait" class="avatar" />
+      <p class="role">Undergraduate Student</p>
+      <h2>Xu Wusiyuan</h2>
+      <p class="intro">A junior Computer Science student at the University of Macau.</p>
+      <div class="quick-contact">
+        <a href="mailto:3188202963@qq.com">3188202963@qq.com</a>
+        <a href="tel:15751806290">15751806290</a>
+      </div>
+    </section>
+
+    <section class="about-card">
+      <h3>About</h3>
+      <p>
+        Hello, my name is Xu Wu Siyuan. I am a junior student majoring in Computer Science at the University of Macau.
+        I have two years of research experience in a university laboratory, with practical skills in programming, data analysis,
+        and basic algorithm research.
+      </p>
+      <ul class="about-meta">
+        <li><strong>Country:</strong> China</li>
+        <li><strong>University:</strong> University of Macau</li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/xuwusiyuan" target="_blank">github.com/xuwusiyuan</a></li>
+      </ul>
+    </section>
+
+    <section class="tabs-wrap">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="projects">Projects</button>
+        <button class="tab-btn" data-tab="resume">Resume</button>
+        <button class="tab-btn" data-tab="contact">Contact</button>
+      </div>
+
+      <div class="tab-panel active" id="projects">
+        <div class="card">
+          <h3>NLP Tourism Dataset Processing</h3>
+          <ul>
+            <li>Processed 5,000+ travel plans</li>
+            <li>Processed 20,000+ tourism attraction records</li>
+            <li>Tech stack: Python, LLM workflow, AI Agent workflow</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="resume">
+        <div class="card">
+          <h3>Education</h3>
+          <ul>
+            <li>Xi’an Jiaotong University Suzhou Affiliated High School (2021–2023)</li>
+            <li>University of Macau, Computer Science (2023–Present)</li>
+          </ul>
+          <h3>Skills</h3>
+          <div class="skills">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Java</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="contact">
+        <div class="card">
+          <h3>Contact Info</h3>
+          <p><strong>Email:</strong> 3188202963@qq.com</p>
+          <p><strong>Phone:</strong> 15751806290</p>
+          <p><strong>WeChat:</strong> xwsy3188202963</p>
+
+          <h3>Let’s Work Together.</h3>
+          <form class="contact-form" action="javascript:void(0)">
+            <input type="text" placeholder="Name*" required />
+            <input type="email" placeholder="Email*" required />
+            <input type="text" placeholder="Subject" />
+            <textarea rows="5" placeholder="Message*"></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">© 2026 Xu Wusiyuan. All rights reserved.</footer>
+  </div>
+
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/tabs.js"></script>
+</body>
+</html>
